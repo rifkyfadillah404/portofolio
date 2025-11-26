@@ -2,25 +2,25 @@ import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ReactIcon, VueIcon, TypeScriptIcon, NodeIcon, PythonIcon, DatabaseIcon, GitIcon, FigmaIcon } from '../components/Icons';
+import { ReactIcon, NextJsIcon, JavaScriptIcon, FlutterIcon, LaravelIcon, NodeIcon, DatabaseIcon, GitIcon, GitHubIcon, FigmaIcon } from '../components/Icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
   // Frontend
   { id: 'react', name: 'React', Icon: ReactIcon, level: 90, category: 'frontend', x: 12, y: 20 },
-  { id: 'nextjs', name: 'Next.js', Icon: ReactIcon, level: 85, category: 'frontend', x: 8, y: 45 },
-  { id: 'javascript', name: 'JavaScript', Icon: TypeScriptIcon, level: 90, category: 'frontend', x: 18, y: 70 },
+  { id: 'nextjs', name: 'Next.js', Icon: NextJsIcon, level: 85, category: 'frontend', x: 8, y: 45 },
+  { id: 'javascript', name: 'JavaScript', Icon: JavaScriptIcon, level: 90, category: 'frontend', x: 18, y: 70 },
   
   // Mobile & Backend
-  { id: 'flutter', name: 'Flutter', Icon: VueIcon, level: 88, category: 'backend', x: 45, y: 22 },
-  { id: 'laravel', name: 'Laravel', Icon: PythonIcon, level: 85, category: 'backend', x: 52, y: 48 },
+  { id: 'flutter', name: 'Flutter', Icon: FlutterIcon, level: 88, category: 'backend', x: 45, y: 22 },
+  { id: 'laravel', name: 'Laravel', Icon: LaravelIcon, level: 85, category: 'backend', x: 52, y: 48 },
   { id: 'nodejs', name: 'Node.js', Icon: NodeIcon, level: 80, category: 'backend', x: 48, y: 75 },
   { id: 'mysql', name: 'MySQL', Icon: DatabaseIcon, level: 85, category: 'backend', x: 58, y: 90 },
   
   // Tools
   { id: 'git', name: 'Git', Icon: GitIcon, level: 90, category: 'tools', x: 82, y: 20 },
-  { id: 'github', name: 'GitHub', Icon: GitIcon, level: 90, category: 'tools', x: 88, y: 45 },
+  { id: 'github', name: 'GitHub', Icon: GitHubIcon, level: 90, category: 'tools', x: 88, y: 45 },
   { id: 'figma', name: 'Figma', Icon: FigmaIcon, level: 80, category: 'tools', x: 85, y: 70 },
 ];
 
