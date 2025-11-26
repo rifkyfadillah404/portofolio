@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #06b6d4;
+  --color-primary-dark: #0891b2;
+  --color-secondary: #3b82f6;
+  --color-accent: #3b82f6;
+  --color-dark: #030712;
+  --color-dark-light: #111827;
+  --color-light: #f8fafc;
+  --color-gray: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  overflow-x: hidden;
+}
+
+body.light-mode {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Layout */
+.section-padding {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Text Colors */
+.text-primary { color: var(--color-primary) !important; }
+.text-secondary { color: var(--color-secondary) !important; }
+.text-light { color: var(--color-light) !important; }
+.text-dark { color: var(--color-dark) !important; }
+.text-gray { color: var(--color-gray) !important; }
+
+/* Background Colors */
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-secondary { background-color: var(--color-secondary) !important; }
+.bg-dark { background-color: var(--color-dark) !important; }
+.bg-dark-light { background-color: var(--color-dark-light) !important; }
+.bg-light { background-color: var(--color-light) !important; }
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Font */
+.font-display {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Card */
+.card {
+  background-color: var(--color-dark-light);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.light-mode .card {
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #030712;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+/* Custom cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.cursor-outline.hover {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
